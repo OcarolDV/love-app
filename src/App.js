@@ -1,25 +1,63 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [showLovePage, setShowLovePage] = useState(false);
+    const [yesSize, setYesSize] = useState(1);
+    const [noSize, setNoSize] = useState(1);
+
+    const handleNoClick = () => {
+        setYesSize(prevSize => prevSize * 1.1);
+        setNoSize(prevSize => prevSize * 0.9);
+    };
+
+    const handleYesClick = () => {
+        setShowLovePage(true);
+    };
+
+    const handleBackToMainPage = () => {
+        setShowLovePage(false);
+        setYesSize(1);
+        setNoSize(1);
+    };
+
+    if (showLovePage) {
+        return (
+            <motion.div
+                className="love-page"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+            >
+                <h1>I LOVE YOU MOREEEEEEEE!!</h1>
+                <button className="yipee-button" onClick={handleBackToMainPage}>
+                    YIPEEEEE
+                </button>
+            </motion.div>
+        );
+    }
+
+    return (
+        <div className="main-page">
+            <h1>Do you love me?</h1>
+            <button
+                className="yes-button"
+                style={{ transform: `scale(${yesSize})` }}
+                onClick={handleYesClick}
+            >
+                Yes
+            </button>
+            {noSize > 0.1 && (
+                <button
+                    className="no-button"
+                    style={{ transform: `scale(${noSize})` }}
+                    onClick={handleNoClick}
+                >
+                    No
+                </button>
+            )}
+        </div>
+    );
 }
 
 export default App;
