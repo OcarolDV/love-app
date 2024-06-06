@@ -26,10 +26,11 @@ function App() {
         return (
             <motion.div
                 className="love-page"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1, ease: [0.1, 1, 0.1, 1] }}
             >
-                <h1>I LOVE YOU MOREEEEEEEE!!</h1>
+                <h1>I LOVE YOU MORE DAHLIAAAAAAA!!</h1>
                 <button className="yipee-button" onClick={handleBackToMainPage}>
                     YIPEEEEE
                 </button>
