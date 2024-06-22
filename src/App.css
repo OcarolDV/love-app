@@ -8,7 +8,43 @@ body {
   background-color: #a8dadc; /* Pastel blue */
 }
 
-.main-page, .love-page {
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px; /* Add margin to separate from top */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  width: 80px; /* Adjust width */
+  height: 80px; /* Adjust height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.9rem; /* Adjust font size */
+  text-align: center; /* Center align text */
+  line-height: 1.1rem; /* Adjust line height */
+}
+
+.navbar a:hover {
+  background-color: #ffb6c1; /* Pastel red */
+  transform: scale(1.1);
+}
+
+.main-page, .love-page, .photos-page, .message-page {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,6 +52,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
+  padding-top: 10px; /* Add padding to ensure content is below the navbar */
 }
 
 .yes-button, .no-button {
@@ -31,10 +68,9 @@ body {
 .love-page {
   background-color: #ffb6c1; /* Pastel red */
   color: #fff;
-  font-weight: 1000;
   width: 80%; /* Set a larger width */
   min-height: 50%; /* Set a minimum height */
-  padding: 2rem; /* Add padding */
+  padding: 1rem; /* Add padding */
   border-radius: 10px; /* Optional: Add rounded corners for better aesthetics */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visual */
 }
@@ -46,7 +82,7 @@ body {
   border: none;
   border-radius: 5px;
   background-color: #ffffff;
-  color: #000000;
+  color: #ff6f61;
   transition: background-color 0.3s ease-in-out;
 }
 
