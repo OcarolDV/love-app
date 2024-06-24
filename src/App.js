@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './App.css';
+import Photos from './components/Photos'; // Import the Photos component
+import LovePage from './components/LovePage'; // Import the LovePage component
+import Message from './components/Message'; // Import the Message component
 
 function Home({ handleYesClick, handleNoClick, yesSize, noSize }) {
   return (
@@ -25,30 +28,6 @@ function Home({ handleYesClick, handleNoClick, yesSize, noSize }) {
       )}
     </div>
   );
-}
-
-function LovePage({ handleBackToMainPage }) {
-  return (
-    <motion.div
-      className="love-page"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ duration: 0.5, ease: [0.42, 0, 0.58, 1] }}
-    >
-      <h1>I LOVE YOU MOREEEEEEEEE!!</h1>
-      <button className="yipee-button" onClick={handleBackToMainPage}>
-        YIPEEEEE
-      </button>
-    </motion.div>
-  );
-}
-
-function Photos() {
-  return <div className="photos-page"><h1>Photos Page</h1></div>;
-}
-
-function Message() {
-  return <div className="message-page"><h1>Message Page</h1></div>;
 }
 
 function App() {
